@@ -1,2 +1,3 @@
+setEnv.ps1
 node_modules/
 coverage/

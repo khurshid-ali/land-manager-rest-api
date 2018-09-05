@@ -3,7 +3,7 @@
   "mongoDb": {
     "user": "",
     "password": "",
-    "serveer": "cluster0-exhmu.mongodb.net",
+    "server": "cluster0-exhmu.mongodb.net",
     "database": "land-manager-db"
   },
   "jwtPrivateKey": ""
