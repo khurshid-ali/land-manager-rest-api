@@ -8,6 +8,7 @@ const app = express();
 //Error Handler and loggers configurations
 
 app.use("/", (req, resp) => {
+  console.log("some changes");
   resp.send("Hello world");
 });
 
