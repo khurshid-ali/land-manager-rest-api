@@ -1,0 +1,7 @@
+{
+  "mongoDb": {
+    "user": "landMan_MongoUser",
+    "password": "landMan_MongoPass"
+  },
+  "jwtPrivateKey": "landMan_jwtPrivateKey"
+}
