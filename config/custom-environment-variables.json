@@ -1,4 +1,5 @@
 {
+  "port": "PORT",
   "mongoDb": {
     "user": "landMan_MongoUser",
     "password": "landMan_MongoPass"

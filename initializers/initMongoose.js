@@ -5,7 +5,7 @@ module.exports = function() {
   //check required environment variables.
   if (!config.get("mongoDb.user") || !config.get("mongoDb.password")) {
     console.error(
-      "FATAL: landMan_MongoUser, landMan_MongoPass environment variable are not set."
+      "FATAL ERROR: landMan_MongoUser, landMan_MongoPass environment variable are not set."
     );
     process.exit(1);
   }
@@ -20,8 +20,8 @@ module.exports = function() {
 
   //open connection to mongoose.
   mongoose.connection
-    .on("error", console.error.bind(console, "connection error:"))
+    .on("error", console.error.bind(console, "CONNECTION ERROR:"))
     .once("open", function() {
-      console.log("connection to monbodb is open.");
+      console.log("== Mongoose connection...OK");
     });
 };
