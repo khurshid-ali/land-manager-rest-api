@@ -1,1 +1,15 @@
 info: == Winston configured....OK
+info: == Winston configured....OK
+error: Custom error to check async error.
+error: Custom error to check async error.
+info: == Winston configured....OK
+info: == Winston configured....OK
+error: Cannot destructure property `name` of 'undefined' or 'null'.
+error: Cannot destructure property `name` of 'undefined' or 'null'.
+info: == Winston configured....OK
+error: Cannot destructure property `name` of 'undefined' or 'null'.
+info: == Winston configured....OK
+error: Land.save is not a function
+info: == Winston configured....OK
+error: Land.save is not a function
+info: == Winston configured....OK

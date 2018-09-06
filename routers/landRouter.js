@@ -5,9 +5,6 @@ const router = express.Router();
 //GET /api/lands
 router.get("/", async (req, resp) => {
   const lands = await Land.find();
-
-  throw Error("Custom error to check async error.");
-
   resp.send(lands);
 });
 
@@ -25,6 +22,20 @@ router.get("/:id", async (req, resp, next) => {
 });
 
 //POST /api/lands
-router.post("/", async (req, resp, next) => {});
+router.post("/", async (req, resp) => {
+  const result = validate(req.body);
+
+  if (result.error) return resp.status(400).send(result.error.details);
+
+  const { name } = req.body;
+
+  let land = new Land({
+    name
+  });
+
+  land = await land.save();
+
+  resp.send(land);
+});
 
 module.exports = router;

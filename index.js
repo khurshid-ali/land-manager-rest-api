@@ -1,5 +1,5 @@
 const express = require("express");
-require("express-async-errors");
+require("express-async-errors"); //wraps an async error handler around all route handlers.
 const config = require("config");
 const initWinston = require("./initializers/initWinston");
 const initMongoose = require("./initializers/initMongoose");
@@ -24,9 +24,10 @@ if (!config.get("jwtPrivateKey")) {
 initWinston();
 //initialize mongoose.
 initMongoose();
-console.log("== Mongoose initialized....OK");
+console.log("== initialization....OK");
 
 //middleware configurations
+app.use(express.json());
 console.log("== Middlewares initialized...OK");
 
 //router configurations
