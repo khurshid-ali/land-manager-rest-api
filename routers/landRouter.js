@@ -29,13 +29,13 @@ router.post("/", async (req, resp) => {
 
   const { name } = req.body;
 
-  let land = new Land({
+  let newLand = new Land({
     name
   });
 
-  land = await land.save();
+  land = await newLand.save();
 
-  resp.send(land);
+  resp.send(newLand);
 });
 
 module.exports = router;

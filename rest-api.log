@@ -13,3 +13,26 @@ error: Land.save is not a function
 info: == Winston configured....OK
 error: Land.save is not a function
 info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+error: E11000 duplicate key error collection: land-manager-db.users index: email_1 dup key: { : "md_khurshid@hotmail.com" }
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+error: _ is not defined
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK

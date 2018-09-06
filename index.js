@@ -5,6 +5,7 @@ const initWinston = require("./initializers/initWinston");
 const initMongoose = require("./initializers/initMongoose");
 const homeRouter = require("./routers/homeRouter");
 const landsRouter = require("./routers/landRouter");
+const usersRouter = require("./routers/usersRouter");
 const errorHandler = require("./middleWares/errorHandler");
 
 const app = express();
@@ -27,12 +28,13 @@ initMongoose();
 console.log("== initialization....OK");
 
 //middleware configurations
-app.use(express.json());
+app.use(express.json()); //without this req.body will not have any data.
 console.log("== Middlewares initialized...OK");
 
 //router configurations
 app.use("/", homeRouter);
 app.use("/api/lands", landsRouter);
+app.use("/api/users", usersRouter);
 console.log("== Routers initialized...OK");
 
 //Error Handler and loggers configurations
