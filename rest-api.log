@@ -36,3 +36,23 @@ info: == Winston configured....OK
 info: == Winston configured....OK
 info: == Winston configured....OK
 info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+error: userFound.verifyPassword is not a function
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+error: Invalid salt. Salt must be in the form of: $Vers$log2(NumRounds)$saltvalue
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK
+info: == Winston configured....OK

@@ -6,6 +6,7 @@ const initMongoose = require("./initializers/initMongoose");
 const homeRouter = require("./routers/homeRouter");
 const landsRouter = require("./routers/landRouter");
 const usersRouter = require("./routers/usersRouter");
+const loginRouter = require("./routers/loginRouter");
 const errorHandler = require("./middleWares/errorHandler");
 
 const app = express();
@@ -33,8 +34,9 @@ console.log("== Middlewares initialized...OK");
 
 //router configurations
 app.use("/", homeRouter);
-app.use("/api/lands", landsRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/lands", landsRouter);
 console.log("== Routers initialized...OK");
 
 //Error Handler and loggers configurations
