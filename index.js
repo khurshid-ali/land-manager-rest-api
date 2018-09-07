@@ -1,6 +1,8 @@
 const express = require("express");
 require("express-async-errors"); //wraps an async error handler around all route handlers.
 const config = require("config");
+const helmet = require("helmet");
+const compression = require("compression");
 const initWinston = require("./initializers/initWinston");
 const initMongoose = require("./initializers/initMongoose");
 const homeRouter = require("./routers/homeRouter");
@@ -29,6 +31,8 @@ initMongoose();
 console.log("== initialization....OK");
 
 //middleware configurations
+app.use(helmet());
+app.use(compression());
 app.use(express.json()); //without this req.body will not have any data.
 console.log("== Middlewares initialized...OK");
 
