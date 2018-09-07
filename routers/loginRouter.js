@@ -1,4 +1,7 @@
+const _ = require("lodash");
 const { User } = require("../models/user");
+const config = require("config");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const express = require("express");
@@ -35,7 +38,8 @@ router.post("/", async (req, resp) => {
     return resp.status(400).send("Incorrect user name and password.");
 
   //create a token and send the token over..
-  resp.send("login successful.");
+  const token = userFound.generateAuthToken();
+  resp.header("x-auth-token", token).send("login successful.");
 });
 
 module.exports = router;

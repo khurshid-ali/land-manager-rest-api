@@ -1,6 +1,10 @@
 const express = require("express");
 const { Land, validate } = require("../models/land");
+const authorize = require("../middleWares/authorize");
 const router = express.Router();
+
+//all route handlers for this router are secured.
+router.use(authorize);
 
 //GET /api/lands
 router.get("/", async (req, resp) => {
@@ -9,7 +13,7 @@ router.get("/", async (req, resp) => {
 });
 
 //GET /api/lands/:id
-router.get("/:id", async (req, resp, next) => {
+router.get("/:id", async (req, resp) => {
   const { id } = req.params;
 
   if (!id) return resp.status(400).send("id is required");

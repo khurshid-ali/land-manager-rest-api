@@ -2,12 +2,16 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const { User, validateUserInput } = require("../models/user");
+const authorize = require("../middleWares/authorize");
 const express = require("express");
 const router = express.Router();
 
-//GET /api/users/me
-router.get("/me", async (req, resp) => {
-  resp.send("hello me.");
+//GET /api/users/me (Secure)
+router.get("/me", authorize, async (req, resp) => {
+  const { _id, name, email } = req.user;
+  const me = await User.findById(_id);
+  if (!me) throw new Error("User not found.");
+  resp.send(_.pick(me, ["name", "email", "isAdmin"]));
 });
 
 //POST /api/users/register
@@ -36,7 +40,8 @@ router.post("/register", async (req, resp) => {
 });
 
 //POST /api/users/resetpassword
-router.post("/resetpassword", async (req, resp) => {
+//Secured route.
+router.post("/resetpassword", authorize, async (req, resp) => {
   const validationSchema = {
     email: Joi.string()
       .email()

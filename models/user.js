@@ -1,3 +1,4 @@
+const _ = require("lodash");
 const config = require("config");
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
@@ -18,6 +19,18 @@ const UserSchema = new Schema({
   password: { type: String, minLength: 5, maxlength: 1024, required: true },
   isAdmin: { type: Boolean, default: false }
 });
+
+//User.generateAuthToken()
+UserSchema.methods.generateAuthToken = function() {
+  //generate jsonwebtoken
+  const token = jwt.sign(
+    _.pick(this, ["_id", "name", "email"]),
+    config.get("jwtPrivateKey"),
+    { expiresIn: 60 * 60 }
+  );
+
+  return token;
+};
 
 const User = mongoose.model("user", UserSchema);
 
