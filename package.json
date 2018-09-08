@@ -4,11 +4,11 @@
   "description": "Land Manager Rest Api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "start": "node index.js"
   },
   "engines": {
-    "node":"8.11.4"
+    "node": "8.11.4"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +24,8 @@
     "lodash": "^4.17.10",
     "mongoose": "^5.2.13",
     "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
   }
 }

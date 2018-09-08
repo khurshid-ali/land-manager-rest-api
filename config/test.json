@@ -1,0 +1,11 @@
+{
+  "name": "Land Manager Rest Api",
+  "port": "",
+  "mongoDb": {
+    "user": "",
+    "password": "",
+    "server": "cluster0-exhmu.mongodb.net",
+    "database": "land-manager-db"
+  },
+  "jwtPrivateKey": "abc213"
+}
